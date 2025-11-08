@@ -1,7 +1,6 @@
 import { ArrowRight, Store } from "lucide-react"
-import { Button } from "../ui/button"
 import Link from "next/link"
-import { PT_Sans_Caption } from "next/font/google"
+import { Button } from "@/components/ui/button"
 
 export const CallToAction = () => {
   return (

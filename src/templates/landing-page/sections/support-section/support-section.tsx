@@ -1,5 +1,4 @@
 import { HeartHandshake, PaintbrushVertical, Store } from "lucide-react"
-import { PT_Sans_Caption } from "next/font/google"
 
 export const SupportSection = () => {
   return (
