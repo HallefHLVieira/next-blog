@@ -16,3 +16,6 @@ yarn-error.log*
 lerna-debug.log*
 .pnp
 .pnp.js
+
+# contentlayer
+.contentlayer
