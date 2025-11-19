@@ -37,7 +37,7 @@ export const PostCard = (
             <span className="text-body-xs text-gray-300">{date}</span>
           </div>
           <Image
-            src={`/assets/${image}`}
+            src={image}
             alt={title}
             width={288}
             height={144}
@@ -57,7 +57,7 @@ export const PostCard = (
             <div className="relative h-5 w-5 md:h-6 md:w-6 overflow-hidden rounded-full 
             border-blue-200 border-[1px]">
               <Image
-                src={`/assets/${author.avatar}`}
+                src={author.avatar}
                 alt="Autor"
                 width={32}
                 height={32}

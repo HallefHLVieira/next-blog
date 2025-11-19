@@ -2,10 +2,10 @@
 title: 5 motivos pra escolher o Site.Set
 description: O Site.Set oferece tudo o que você precisa para criar uma loja online eficiente e personalizada. Desde a integração com sistemas de pagamento...
 date: 2024/12/20 10:20:00
-image: segundo-post.jpg
+image: /assets/segundo-post.jpg
 author:
   name: Dulce Westervelt
-  avatar: customer-04.png
+  avatar: /assets/customer-04.png
 ---
 
 O Site.Set oferece tudo o que você precisa para criar uma loja online eficiente e personalizada. Desde a integração com sistemas de pagamento até a criação de páginas de vendas, veja por que milhares de empreendedores escolhem nossa plataforma.

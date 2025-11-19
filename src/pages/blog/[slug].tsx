@@ -1,3 +1,6 @@
+import { Avatar } from "@/src/components/avatar";
+import { AvatarContent } from "@/src/components/avatar/avatar-content";
+import { AvatarImage } from "@/src/components/avatar/avatar-image";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/src/components/ui/breadcrumb";
 import { allPosts } from "contentlayer/generated";
 import Image from "next/image";
@@ -7,8 +10,10 @@ import { useRouter } from "next/router";
 export default function PostPage() {
   const router = useRouter();
   const slug = router.query.slug as string;
-  const post = allPosts.find((post) => post.slug.toLowerCase().includes(slug.toLowerCase()));
-
+  const post = allPosts.find(
+    (post) => post.slug.toLowerCase() === slug.toLowerCase()
+  )!;
+  const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
   return (
     <main className="mt-32">
       <Breadcrumb >
@@ -30,7 +35,7 @@ export default function PostPage() {
         <article className="bg-gray-600 rounded-lg overflow-hidden border-gray-400 border-[1px]">
           <figure className="relative aspect-[16/10] w-full overflow-hidden rounded-lg">
             <Image
-              src={`/assets/${post?.image}`}
+              src={post?.image}
               alt={post?.title ?? 'Post image'}
               fill
               className="object-cover"
@@ -39,8 +44,24 @@ export default function PostPage() {
               {post?.title}
             </figcaption>
           </figure>
+
+          <header className="p-4 md:p-6 lg:p-12 pb-0">
+            <h1 className="mb-6 text-balance text-heading-lg md:text-heading-xl lg:text-heading-xl">
+              {post?.title}
+            </h1>
+            <Avatar.Container>
+              <AvatarImage src={post?.author.avatar} alt={post?.title}></AvatarImage>
+              <AvatarContent>
+                <Avatar.Title>{post?.author.name}</Avatar.Title>
+                <Avatar.Description>
+                  Publicado em {" "}
+                  <time dateTime={post?.date}>{publishedDate}</time>
+                </Avatar.Description>
+              </AvatarContent>
+            </Avatar.Container>
+          </header>
         </article>
       </div>
-    </main>
+    </main >
   )
 }
